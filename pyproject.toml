@@ -22,6 +22,14 @@ Repository = "https://github.com/gmweaver/libpypostal"
 requires = ["setuptools"]
 build-backend = "setuptools.build_meta"
 
+[[tool.setuptools.ext-modules]]
+name = "libpypostal._parser"
+sources = ["src/pyparser.c", "src/pyutils.c"]
+libraries = ["postal"]
+include-dirs = ["/usr/local/include", "src/"]
+library-dirs = ["/usr/local/lib"]
+extra-compile-args = ["-std=c99"]
+
 [tool.setuptools.packages.find]
 include = ["libpypostal*"]
 

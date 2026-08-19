@@ -1,9 +1,10 @@
-from setuptools import Extension, setup
+from setuptools import setup, Extension
+
 
 ext_modules = [
     Extension(
         "libpypostal._parser",
-        sources=["src/pyparser.c", "src/pyutils.c", "src/pyutils.h"],
+        sources=["src/pyparser.c", "src/pyutils.c"],
         libraries=["postal"],
         include_dirs=["/usr/local/include", "src/"],
         library_dirs=["/usr/local/lib"],
